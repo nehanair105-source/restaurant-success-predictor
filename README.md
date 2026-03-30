@@ -6,7 +6,7 @@ This project aims to analyze restaurant data and predict whether a restaurant wi
 ---
 
 ##  Dataset Description
-The dataset was collected by scraping restaurant data from Zomato.
+The dataset was collected by scraping publicly available restaurant data from Zomato.
 
 ###  Dataset Size:
 - Number of rows: 3834
@@ -45,8 +45,11 @@ Restaurant success depends on factors like pricing, location, and customer ratin
 ---
 
 ##  Success Metric
-- Rating ≥ 4.0 → Successful  
-- Rating < 4.0 → Not Successful  
+Restaurants are classified based on their ratings:
+- Rating ≥ 4.0 → Successful
+- Rating < 4.0 → Not Successful
+
+This threshold is chosen because restaurants with ratings above 4 are generally considered highly rated and preferred by customers.
 
 ---
 
