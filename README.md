@@ -102,19 +102,108 @@ Various visualizations were created to understand the dataset:
 
 ---
 
-##  Key Insights
+#  Model Building & Evaluation
 
-- Most restaurants have ratings between 3.5 and 4.5  
-- Popular cuisines dominate the dataset  
-- Certain locations have higher restaurant density  
-- Higher-rated restaurants tend to have more votes  
-- Many restaurants offer delivery services  
+## Model Preparation
+
+Before training the models, the dataset was preprocessed:
+
+- Removed unnecessary columns like name  
+- Applied log transformation on votes to reduce skewness  
+- Encoded categorical features:
+  - Price category → Label Encoding  
+  - Cuisine → MultiLabelBinarizer  
+- Created location-based features  
+- Handled class imbalance using appropriate weights  
 
 ---
 
-##  Outcome 
+## Train-Test Split
 
-- Cleaned dataset ready for analysis  
-- New features created for better insights  
-- Key patterns identified using visualizations  
+The dataset was split into:
+
+- 80% Training Data  
+- 20% Testing Data  
+
+Random state was set to ensure reproducibility.
+
+---
+
+## Models Used
+
+The following machine learning models were trained and evaluated:
+
+- Logistic Regression  
+- Support Vector Machine (SVM)  
+- Decision Tree  
+- Random Forest  
+- XGBoost  
+
+---
+
+## Hyperparameter Tuning
+
+Hyperparameter tuning was performed on XGBoost using GridSearchCV:
+
+- n_estimators: 100, 200, 300  
+- max_depth: 3, 5, 7  
+- learning_rate: 0.01, 0.1, 0.2  
+
+---
+
+## Evaluation Metrics
+
+The models were evaluated using:
+
+- Accuracy  
+- Precision  
+- Recall  
+- F1 Score  
+
+---
+
+## Final Model
+
+- Best performing model: XGBoost (after tuning)  
+- Provided the best balance between precision and recall  
+- Handled class imbalance effectively  
+
+---
+
+## Feature Importance
+
+The most important features affecting restaurant success:
+
+- Dining rating  
+- Dining votes  
+- Location  
+- Price category  
+- Cuisine  
+
+---
+
+#  Results & Insights
+
+Key insights obtained from the analysis:
+
+- Restaurants with higher ratings (≥ 4) are more likely to be successful  
+- Location plays a significant role in determining success  
+- Medium-priced restaurants tend to perform better  
+- Popular cuisines attract more customers  
+- Restaurants offering delivery services show better performance  
+
+---
+
+# Conclusion
+
+This project successfully predicts restaurant success using machine learning techniques.
+
+- Data cleaning and preprocessing improved model performance  
+- Ensemble models like XGBoost performed better than basic models  
+- The model can be useful for business decision-making  
+ 
+
+---
+
+
 
